@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{% block title %} My site {% endblock %}</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+  </head>
+  <body>
+    <nav class ="navbar navbar-expand-md fixed-top navbar-light bg-light sticky-top" id="header">
+      <div class="container-fluid">
+        <!-- ###/**container fluid settinng in all site*/ -->
+        <a href="#" class="navbar-brad"><img class = "navbar-brad-image" src ="{% static 'LOGO.JPG' %}"</a>
+        <button class ="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+        <span class ="navbar-toggler-icon"></span>
+        <span class ="icon"></span>
+        <span class ="icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id ="navbarResponsive">
+        <ul class="navbar-nav ml-auto dropdown-menu-left">
+          <li class ="nav-item active"><a href="#" class = "nav-link">See a Movie</a></li>
+          <li class ="nav-item active"><a href="#" class = "nav-link">Our Theatres</a></li>
+          <li class ="nav-item active"><a href="#" class = "nav-link">Categories</a></li>
+          <li class ="nav-item active"><a href="#" class = "nav-link">On demand</a></li>
+          <li class ="nav-item active"><a href="#" class = "nav-link">Download app</a></li>
+          <form class="navbar-form navbar-right "  role = "search">
+              <div class="form-group">
+                <input type="text" class="from-control" placeholder="Search">
+              </div>
+          </form>
+          <div class="">
+              <button type="submit" class="btn btn-success">Sign In</button>
+          </div>
+        </ul>
+
+      </div>
+    </div>
+    </nav>
+
+    <div class="container-fluid">
+    {% block content %}
+      <div class="row">
+        <div class="col-xs-12 col-sm-9 col-md-4 col-lg-5" style="background-color:  #ff9990">Left</div>
+        <div class="col-xs-12 col-sm-9 col-md-4 col-lg-5" style="background-color:  #99CCFF">Left</div>
+        <div class="col-xs-12 col-sm-9 col-md-4 col-lg-5" style="background-color:  #00CC99">Left</div>
+      </div>
+    {% endblock %}
+  </div>
+
+
+  <button class="btn btn-info" data-toggle="modal" data-target="#myModal">Help</button>
+  <div class="modal fade"  id="myModal">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Давай ты сможешь, давай, Даваааааааааааааай!</h5>
+          <button data-dismiss="modal" class="close">x</button>
+        </div>
+        <div class="modal-body">Если что непонятно звоните Заманбеку</div>
+          <div class="modal-footer">
+            <button class="btn btn-danger" data-dismiss="modal">Close</button>
+          </div>
+      </div>
+    </div>
+  </div>
+
+<footer class="container-fluid">
+  <div class="container">
+    <div class="row padding text-center">
+      <div class="col-12">
+        <h2>Our Contacts</h2>
+      </div>
+      <div class="col-12 social padding">
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-google-plus-g"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+crossorigin="anonymous"></script>
+  <!-- <script>
+    $('#myModal').modal("show");
+    $('#myModal').on('hide.bs.modal', function(event){
+      alert("Done");
+    });
+  </script> -->
+
+  </body>
+</html>
