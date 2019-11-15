@@ -71,3 +71,33 @@ footer{
   color:yellow;
   background-color: grey;
 }
+
+.card {
+  position: relative;
+
+}
+
+/* Make the image responsive */
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+/* Style the button and place it in the middle of the container/image */
+.card .btn {
+  position: absolute;
+  top: 110%;
+  left: 86%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  color: black;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.card .btn:hover {
+  background-color: black;
+}

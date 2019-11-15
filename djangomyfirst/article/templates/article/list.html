@@ -1,7 +1,9 @@
-{% extends 'base.html' %}
+{% extends 'article/base.html' %}
 
 {% block tytle %}Title of site{% endblock %}
 {% block content %}
+
+<div class="container">
 
 <div class="carousel slide" data-ride="carousel" id="slides">
   <ul class ="carousel-indicators">
@@ -38,6 +40,15 @@
       </div>
     </div>
   </div>
+  <a class="carousel-control-prev" href="#slides" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#slides" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
 </div>
 
 <br>
@@ -52,16 +63,29 @@
   </div>
 </div>
 
+{% for movie in object_list %}
 <div class="container-fluit padding">
+<div class="col-lg-3 col-sm-6">
+  <div class="card">
+    <img src="{{movie.img.url}}" class="card-img-top">
+    <div class="card-vody">
+      <h4 class="card-title danger">{{movie.block_explain}}</h4>
+      <a href="#" class="btn btn-outline-danger " data-toggle="collapse" data-target="#toInfo">show</a>
+    </div>
+  </div>
+</div>
+</div>
+{% endfor %}
+
+<!-- <div class="container-fluit padding">
   <div class="row padding">
     <div class="col-lg-3 col-sm-6">
       <div class="card">
         <img src="https://m.media-amazon.com/images/M/MV5BYmY3NGJlYTItYmQ4OS00ZTEwLWIzODItMjMzNWU2MDE0NjZhXkEyXkFqcGdeQXVyMzQzMDA3MTI@._V1_.jpg" class="card-img-top">
-      </div>
-      <div class="card-vody">
-        <h4 class="card-title danger">R</h4>
-        <p>Years following the events of "The Shining," a now-adult Dan Torrance must protect a young girl with similar powers from a cult known as The True Knot, who prey on children with powers to remain immortal.</p>
-        <a href="#" class="btn btn-warning">Go</a>
+        <div class="card-vody">
+          <h4 class="card-title danger">R</h4>
+          <a href="#" class="btn btn-outline-danger " data-toggle="collapse" data-target="#toInfo">show</a>
+        </div>
       </div>
     </div>
       <div class="col-lg-3 col-sm-6">
@@ -70,7 +94,6 @@
         </div>
         <div class="card-vody">
           <h4 class="card-title">R</h4>
-          <p>Years following the events of "The Shining," a now-adult Dan Torrance must protect a young girl with similar powers from a cult known as The True Knot, who prey on children with powers to remain immortal.</p>
           <a href="#" class="btn btn-warning">Go</a>
         </div>
       </div>
@@ -80,29 +103,38 @@
           </div>
           <div class="card-vody">
             <h4 class="card-title danger">R</h4>
-            <p>Years following the events of "The Shining," a now-adult Dan Torrance must protect a young girl with similar powers from a cult known as The True Knot, who prey on children with powers to remain immortal.</p>
             <a href="#" class="btn btn-warning">Go</a>
           </div>
         </div>
         <div class="col-lg-3 col-sm-6">
           <div class="card">
-            <img src ="https://www.kinopoisk.ru/images/film_big/942396.jpg" class="card-img-top">
+            <img src ="https://m.media-amazon.com/images/M/MV5BYmY3NGJlYTItYmQ4OS00ZTEwLWIzODItMjMzNWU2MDE0NjZhXkEyXkFqcGdeQXVyMzQzMDA3MTI@._V1_.jpg" class="card-img-top">
           </div>
           <div class="card-vody">
             <h4 class="card-title danger">R</h4>
-            <p>Years following the events of "The Shining," a now-adult Dan Torrance must protect a young girl with similar powers from a cult known as The True Knot, who prey on children with powers to remain immortal.</p>
             <a href="#" class="btn btn-warning">Go</a>
           </div>
         </div>
   </div>
 
 </div>
+
+<div class="collapse jumbotron" id="toInfo">
+      <div class="row padding">
+        <div class="col-lg-4">
+          <p>Years following the events of "The Shining," a now-adult Dan Torrance must protect a young girl with similar powers from a cult known as The True Knot, who prey on children with powers to remain immortal.</p>
+        </div>
+        <div class="col-lg-6">
+          <img src="http://static.coolconnections.ru/images/11483/standard/hd/e8ee09977e6d41cb37af0fc1275160e6670d069e.jpg?1568797975" class="card-img-top">
+        </div>
+      </div>
+</div>
 <hr>
 <div class="container-fluit padding">
   <div class="row padding">
     <div class="col-lg-3 col-sm-6">
       <div class="card">
-        <img src="https://www.kinopoisk.ru/images/film_big/1047883.jpg" class="card-img-top">
+        <img src="https://m.media-amazon.com/images/M/MV5BZjJiYTExOTAtNWU0Yi00NzJjLTkwOTgtOTU2NWM1ZjJmYWVhXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg" class="card-img-top">
       </div>
       <div class="card-vody">
         <h4 class="card-title danger">R</h4>
@@ -122,7 +154,7 @@
       </div>
         <div class="col-lg-3 col-sm-6">
           <div class="card">
-            <img src ="https://www.kinopoisk.ru/images/film_big/1043758.jpg" class="card-img-top">
+            <img src ="https://m.media-amazon.com/images/M/MV5BZjJiYTExOTAtNWU0Yi00NzJjLTkwOTgtOTU2NWM1ZjJmYWVhXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg" class="card-img-top">
           </div>
           <div class="card-vody">
             <h4 class="card-title danger">R</h4>
@@ -132,7 +164,7 @@
         </div>
         <div class="col-lg-3 col-sm-6">
           <div class="card">
-            <img src ="https://www.kinopoisk.ru/images/film_big/1278185.jpg" class="card-img-top">
+            <img src ="https://www.film.ru/sites/default/files/movies/posters/32705014-1121453.jpg" class="card-img-top">
           </div>
           <div class="card-vody">
             <h4 class="card-title danger">R</h4>
@@ -148,7 +180,7 @@
   <div class="row padding">
     <div class="col-lg-3 col-sm-6">
       <div class="card">
-        <img src="https://st.kp.yandex.net/images/film_iphone/iphone360_1008445.jpg" class="card-img-top">
+        <img src="http://www.kinokadr.ru/filmzimg/v/vernost/vernost_poster.jpg" class="card-img-top">
       </div>
       <div class="card-vody">
         <h4 class="card-title danger">R</h4>
@@ -158,7 +190,7 @@
     </div>
       <div class="col-lg-3 col-sm-6">
         <div class="card">
-          <img src="https://www.kinopoisk.ru/images/film_big/627299.jpg" class="card-img-top">
+          <img src="https://www.film.ru/sites/default/files/movies/posters/29497298-1078255.jpg" class="card-img-top">
         </div>
         <div class="card-vody">
           <h4 class="card-title">R</h4>
@@ -168,7 +200,7 @@
       </div>
         <div class="col-lg-3 col-sm-6">
           <div class="card">
-            <img src ="https://www.kinopoisk.ru/images/film_big/1007049.jpg" class="card-img-top">
+            <img src ="http://www.kinokadr.ru/filmzimg/v/vernost/vernost_poster.jpg" class="card-img-top">
           </div>
           <div class="card-vody">
             <h4 class="card-title danger">R</h4>
@@ -178,7 +210,7 @@
         </div>
         <div class="col-lg-3 col-sm-6">
           <div class="card">
-            <img src ="http://images6.fanpop.com/image/photos/43000000/Frozen-2-New-Poster-elsa-the-snow-queen-43025916-900-1346.jpg" class="card-img-top">
+            <img src ="https://www.film.ru/sites/default/files/movies/posters/29497298-1078255.jpg" class="card-img-top">
           </div>
           <div class="card-vody">
             <h4 class="card-title danger">R</h4>
@@ -188,5 +220,5 @@
         </div>
   </div>
 
-</div>
+</div> -->
 {% endblock %}

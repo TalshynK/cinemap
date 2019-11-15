@@ -21,4 +21,10 @@ class Comment(models.Model):
 
     def __str__(self):
         return self.author_name
-# Create your models here.
+
+class Block(models.Model):
+    img = models.ImageField(upload_to="movie_image",blank=True)
+    block_explain =models.TextField('Explain of Movie')
+    rating = models.FloatField(default=0.0)
+    numberOfClicks = models.IntegerField(default=0)
+    article_date = models.DateTimeField('date published')
